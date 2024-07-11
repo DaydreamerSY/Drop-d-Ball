@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://coke84qugsdct"]
+
+[ext_resource type="PackedScene" uid="uid://saq7b0ksdlgp" path="res://Scenes/Wall.tscn" id="1_vfcwh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ish1p"]
+size = Vector2(64, 121)
+
+[node name="Wall 1x2 1" instance=ExtResource("1_vfcwh")]
+
+[node name="NinePatchRect" parent="." index="0"]
+offset_top = -61.0
+offset_bottom = 61.0
+
+[node name="CollisionShape2D" parent="NinePatchRect/Bar" index="0"]
+position = Vector2(0, 28.5)
+shape = SubResource("RectangleShape2D_ish1p")

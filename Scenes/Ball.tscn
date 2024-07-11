@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://clw4b1va66fjh"]
+
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_2ujmr"]
+[ext_resource type="Texture2D" uid="uid://dp4hx4hw72yu2" path="res://Assets/Retina/ball_red_small.png" id="2_rkya3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lnnd3"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1g0i8"]
+radius = 31.0161
+
+[node name="Ball" type="RigidBody2D" groups=["ball"]]
+position = Vector2(-39, -40)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_lnnd3")
+script = ExtResource("1_2ujmr")
+
+[node name="Skin" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_rkya3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1g0i8")
