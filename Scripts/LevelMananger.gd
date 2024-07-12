@@ -56,10 +56,10 @@ func _process(_delta):
 	
 	if not Engine.is_editor_hint():
 		
-		if current_ball and current_ball.global_position.distance_to(recently_spawn_ball_position) <= DISTANCE_THRESHOLD:
+		if is_instance_valid(current_ball) and current_ball.global_position.distance_to(recently_spawn_ball_position) <= DISTANCE_THRESHOLD:
 			is_start_adding_points = true
 
-		if is_start_adding_points:
+		if is_instance_valid(current_ball) and is_start_adding_points:
 			if new_ball_position.distance_to(old_ball_position) >= CHANGE_POSITION_THRESHOLD:
 				old_ball_position = new_ball_position
 				ball_tracker.add_point(current_ball.global_position)

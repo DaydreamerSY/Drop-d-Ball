@@ -60,7 +60,7 @@ Walls_info = Array[Dictionary]([{
 "moving_speed": 10,
 "moving_to": Vector2(0, 0),
 "path": &"Wall 1x2 1",
-"rotate": false,
+"rotate": true,
 "rotate_direction": 1,
 "rotate_speed": 1
 }, {
@@ -93,7 +93,7 @@ Walls_info = Array[Dictionary]([{
 "moving_speed": 10,
 "moving_to": Vector2(0, 0),
 "path": &"Wall 1x3 2",
-"rotate": false,
+"rotate": true,
 "rotate_direction": 1,
 "rotate_speed": 1
 }, {
@@ -163,7 +163,7 @@ shape = SubResource("CircleShape2D_mvehc")
 
 [node name="Wall 1x2 1" parent="Walls" instance=ExtResource("6_7nhkw")]
 position = Vector2(356, 682)
-rotation = 2599.39
+rotation = 3.36352
 
 [node name="Wall 1x3 1" parent="Walls" instance=ExtResource("9_7t7hc")]
 position = Vector2(598, 458)
@@ -174,7 +174,7 @@ position = Vector2(129, 797)
 
 [node name="Wall 1x3 2" parent="Walls" instance=ExtResource("9_7t7hc")]
 position = Vector2(569, 1081)
-rotation = 432.954
+rotation = 597.908
 
 [node name="Wall 1x3 3" parent="Walls" instance=ExtResource("9_7t7hc")]
 position = Vector2(365, 380)
