@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bafl8arldx0kl"]
+[gd_scene load_steps=17 format=3 uid="uid://bafl8arldx0kl"]
 
 [ext_resource type="Texture2D" uid="uid://dieometce1qx1" path="res://Assets/Retina/background_brown.png" id="1_eprcj"]
 [ext_resource type="Script" path="res://Scripts/LevelMananger.gd" id="1_s65b2"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://Goal.gd" id="5_ro0li"]
 [ext_resource type="Texture2D" uid="uid://c56kosltirdaj" path="res://Assets/Retina/background_green.png" id="5_ugb3u"]
 [ext_resource type="PackedScene" uid="uid://clw4b1va66fjh" path="res://Scenes/Ball.tscn" id="6_1gf0n"]
-[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Bars/Wall1x2.tscn" id="6_7nhkw"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="6_7nhkw"]
+[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="9_7t7hc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rummi"]
 texture = ExtResource("1_eprcj")
@@ -48,18 +49,61 @@ point_count = 2
 [sub_resource type="CircleShape2D" id="CircleShape2D_mvehc"]
 radius = 24.0208
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("rotate_list")]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_s65b2")
 ball_scene = ExtResource("6_1gf0n")
-rotate_list = [null]
-test_array = Array[Dictionary]([{
-"Moving": "-------",
-"Rotate": "-------",
+Walls_info = Array[Dictionary]([{
+"Moving": "---------------------",
+"Rotate": "---------------------",
 "moving": false,
 "moving_from": Vector2(0, 0),
 "moving_speed": 10,
 "moving_to": Vector2(0, 0),
-"name": &"Wall 1x2 1",
+"path": &"Wall 1x2 1",
+"rotate": false,
+"rotate_direction": 1,
+"rotate_speed": 1
+}, {
+"Moving": "---------------------",
+"Rotate": "---------------------",
+"moving": false,
+"moving_from": Vector2(0, 0),
+"moving_speed": 10,
+"moving_to": Vector2(0, 0),
+"path": &"Wall 1x3 1",
+"rotate": false,
+"rotate_direction": 1,
+"rotate_speed": 1
+}, {
+"Moving": "---------------------",
+"Rotate": "---------------------",
+"moving": false,
+"moving_from": Vector2(0, 0),
+"moving_speed": 10,
+"moving_to": Vector2(0, 0),
+"path": &"Wall 1x2 2",
+"rotate": false,
+"rotate_direction": 1,
+"rotate_speed": 1
+}, {
+"Moving": "---------------------",
+"Rotate": "---------------------",
+"moving": false,
+"moving_from": Vector2(0, 0),
+"moving_speed": 10,
+"moving_to": Vector2(0, 0),
+"path": &"Wall 1x3 2",
+"rotate": false,
+"rotate_direction": 1,
+"rotate_speed": 1
+}, {
+"Moving": "---------------------",
+"Rotate": "---------------------",
+"moving": false,
+"moving_from": Vector2(0, 0),
+"moving_speed": 10,
+"moving_to": Vector2(0, 0),
+"path": &"Wall 1x3 3",
 "rotate": false,
 "rotate_direction": 1,
 "rotate_speed": 1
@@ -118,6 +162,23 @@ shape = SubResource("CircleShape2D_mvehc")
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall 1x2 1" parent="Walls" instance=ExtResource("6_7nhkw")]
+position = Vector2(356, 682)
+rotation = 2599.39
+
+[node name="Wall 1x3 1" parent="Walls" instance=ExtResource("9_7t7hc")]
+position = Vector2(598, 458)
+rotation = 0.745203
+
+[node name="Wall 1x2 2" parent="Walls" instance=ExtResource("6_7nhkw")]
+position = Vector2(129, 797)
+
+[node name="Wall 1x3 2" parent="Walls" instance=ExtResource("9_7t7hc")]
+position = Vector2(569, 1081)
+rotation = 432.954
+
+[node name="Wall 1x3 3" parent="Walls" instance=ExtResource("9_7t7hc")]
+position = Vector2(365, 380)
+rotation = 1.5708
 
 [connection signal="body_entered" from="Goal/Area2D" to="Goal" method="_on_area_2d_body_entered"]
 [connection signal="child_entered_tree" from="Walls" to="." method="_on_walls_child_entered_tree"]

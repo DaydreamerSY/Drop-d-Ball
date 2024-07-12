@@ -33,3 +33,8 @@ func _integrate_forces(state):
 		
 		# Make the ball static  and disable collision after the current frame's physics step
 		# make_static_deferred()
+
+
+func _on_disappear_timer_timeout():
+	#queue_free()
+	pass # Replace with function body.

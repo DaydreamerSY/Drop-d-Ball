@@ -13,6 +13,7 @@ radius = 31.0161
 position = Vector2(-39, -40)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_lnnd3")
+gravity_scale = 2.0
 script = ExtResource("1_2ujmr")
 
 [node name="Skin" type="TextureRect" parent="."]
@@ -32,3 +33,9 @@ texture = ExtResource("2_rkya3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1g0i8")
+
+[node name="DisappearTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]

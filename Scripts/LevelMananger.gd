@@ -4,16 +4,16 @@ extends Node2D
 
 @export var ball_scene: PackedScene
 
-@export var rotate_list: Array[Node2D]
-@export var test_array: Array[Dictionary]
+#@export var rotate_list: Array[Node2D]
+@export var Walls_info: Array[Dictionary]
 
 var wall_info_placeholder = {
-	"name": null,
-	"Rotate": "-------",
+	"path": null,
+	"Rotate": "---------------------",
 	"rotate": false,
 	"rotate_direction": 1,
 	"rotate_speed": 1,
-	"Moving": "-------",
+	"Moving": "---------------------",
 	"moving": false,
 	"moving_from": Vector2(0, 0),
 	"moving_to": Vector2(0, 0),
@@ -51,6 +51,7 @@ func _process(_delta):
 	
 	if Engine.is_editor_hint():
 		#print("something changes in tree")
+		wall_do_action(_delta)
 		pass
 	
 	if not Engine.is_editor_hint():
@@ -63,10 +64,21 @@ func _process(_delta):
 				old_ball_position = new_ball_position
 				ball_tracker.add_point(current_ball.global_position)
 			new_ball_position = current_ball.global_position
+		wall_do_action(_delta)
+			
+	#wall_do_action(_delta)
 
-		for rotate_wall in rotate_list:
-			rotate_wall.rotation_degrees += 1
+		
 
+	pass
+	
+func wall_do_action(delta):
+	for wall in Walls_info:
+		if wall["rotate"]:
+			#print("rotate node: ", wall["path"])
+			#print("rotate node: ", get_node("Walls/" + wall["path"]))
+			get_node("Walls/" + wall["path"]).rotate(1 * delta)
+			
 	pass
 
 func _input(event):
@@ -98,35 +110,35 @@ func update_walls_list():
 	# loop through new list of wall
 	for _wall in _list_of_wall:
 		# check if wall has data based on wall's name
-		for current_wall in test_array:
+		for current_wall in Walls_info:
 			# 
-			if _wall.name == current_wall["name"]:
+			if _wall.get_path() == current_wall["path"]:
 				_keep_values.append(current_wall)
 				break
 	
 	
 	
-	test_array = []
+	Walls_info = []
 
 	for i in range(len(_list_of_wall)):
 		var _temp_info = wall_info_placeholder.duplicate(true)
 		_temp_info["id"] = i
 		_temp_info["name"] = _list_of_wall[i].name
-		test_array.append(_temp_info)
+		Walls_info.append(_temp_info)
 	pass
 	
 func add_new_wall(node):
 	var _temp_info = wall_info_placeholder.duplicate(true)
 	#_temp_info["id"] = node
-	_temp_info["name"] = node.name
-	test_array.append(_temp_info)
+	_temp_info["path"] = node.name
+	Walls_info.append(_temp_info)
 	pass
 	
 	
 func remove_wall(node):
-	for i in range(len(test_array)):
-		if test_array[i]["name"] == node.name:
-			test_array.remove_at(i)
+	for i in range(len(Walls_info)):
+		if Walls_info[i]["path"] == node.name:
+			Walls_info.remove_at(i)
 			break
 	pass
 
