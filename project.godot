@@ -15,6 +15,11 @@ run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariant="*res://Scripts/Packages/Load at startup/GlobalVariant.gd"
+AdjustScreen="*res://Scripts/Packages/Load at startup/AdjustScreen.gd"
+
 [display]
 
 window/size/viewport_width=720
@@ -36,3 +41,4 @@ Tap={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

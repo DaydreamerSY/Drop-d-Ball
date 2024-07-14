@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://drw0iexupl4tr"]
+
+[ext_resource type="PackedScene" uid="uid://csm5d128ghsdn" path="res://Scenes/Level.tscn" id="1_xas43"]
+[ext_resource type="Texture2D" uid="uid://digowx2ep700x" path="res://Assets/Cursors/hand_point.png" id="2_jbrji"]
+[ext_resource type="Texture2D" uid="uid://dub8kg7hvj07v" path="res://Assets/Cursors/check_round_round_circle.png" id="2_n48eg"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_srwny"]
+[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_tbhrt"]
+
+[node name="Level 1" instance=ExtResource("1_xas43")]
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(194, 766)
+
+[node name="Markers" parent="." index="4"]
+visible = true
+
+[node name="Marker Goal" parent="Markers" index="0"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Markers" index="2"]
+offset_left = 563.0
+offset_top = 1134.0
+offset_right = 601.0
+offset_bottom = 1172.0
+texture = ExtResource("2_n48eg")
+expand_mode = 1
+
+[node name="Tuto Hand" type="TextureRect" parent="Markers/TextureRect" index="0"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 65.0
+offset_bottom = 84.0
+rotation = -0.552326
+texture = ExtResource("2_jbrji")
+
+[node name="Line2D2" type="Line2D" parent="Markers" index="3"]
+position = Vector2(-196, -1023)
+points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Markers/Line2D2" index="0"]
+position = Vector2(1, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Markers/Line2D2" index="1"]
+position = Vector2(-39, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Markers" index="4"]
+position = Vector2(-2, 0)
+points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Markers/Line2D3" index="0"]
+position = Vector2(1, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Markers/Line2D3" index="1"]
+position = Vector2(-39, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Markers" index="5"]
+visible = false
+offset_left = 80.0
+offset_top = 894.0
+offset_right = 574.0
+offset_bottom = 1017.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Drag in [color=#45a9ec]Blue zone[/color] then look at  [color=#31de79]Green zone[/color]"
+
+[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_srwny")]
+position = Vector2(128, 340)
+rotation = -0.853686
+
+[node name="Wall 1x3 1" parent="Walls" index="1" instance=ExtResource("3_tbhrt")]
+position = Vector2(517, 605)
+rotation = 0.76208
+
+[node name="UI" parent="." index="7"]
+offset_right = 0.0
+offset_bottom = 0.0

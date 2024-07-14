@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dew8nv7dd1fx"]
+
+[ext_resource type="Script" path="res://Goal.gd" id="1_b7m5j"]
+[ext_resource type="Texture2D" uid="uid://bqe3jhn8s5ton" path="res://Assets/Retina/hole.png" id="2_h3bt8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mvehc"]
+radius = 1.41421
+
+[node name="Goal" type="Node2D"]
+script = ExtResource("1_b7m5j")
+
+[node name="Skin" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(48, 48)
+texture = ExtResource("2_h3bt8")
+
+[node name="Area2D" type="Area2D" parent="." groups=["hole"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mvehc")
+
+[node name="Votex effect" type="Node2D" parent="."]
+
+[node name="Timer reset votex" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer reset votex" to="." method="_on_timer_reset_votex_timeout"]
