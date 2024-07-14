@@ -46,6 +46,12 @@ func _ready():
 	level_list = $Levels
 	camera = $Camera2D
 	_get_levels_list()
+	
+	# 1000 in (720x1280) equal ? in other size -> 1000/1280
+	
+	#GlobalVariant.BALL_OFFSET = DisplayServer.screen_get_size().y * 1000/1280
+	GlobalVariant.BALL_OFFSET = 1025
+	print(GlobalVariant.BALL_OFFSET)
 	pass # Replace with function body.
 
 

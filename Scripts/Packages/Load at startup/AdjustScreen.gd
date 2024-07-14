@@ -14,9 +14,11 @@ func _ready():
 	elif OS.get_name() == "macOS":
 		width = 1080
 		height = 1920
-	else:
-		width = 1080 # Default width for other OS
-		height = 2520 # Default height for other OS
+	#else:
+		#width = 1080 # Default width for other OS
+		#height = 2520 # Default height for other OS
 
+	print(DisplayServer.window_get_size())
 	DisplayServer.window_set_size(Vector2(width, height))
+	print(DisplayServer.window_get_size())
 

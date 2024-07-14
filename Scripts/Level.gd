@@ -22,7 +22,6 @@ var CHANGE_POSITION_THRESHOLD = 2
 var is_mouse_down = false
 
 var ball_list
-var BALL_MOUSE_OFFSET = 1000
 
 var in_game_menu
 var goal
@@ -56,7 +55,7 @@ func _process(_delta):
 		var _mouse_pos = get_global_mouse_position()
 		if is_instance_valid(current_ball):
 			current_ball.global_position.x = _mouse_pos.x
-			current_ball.global_position.y = _mouse_pos.y - BALL_MOUSE_OFFSET
+			current_ball.global_position.y = _mouse_pos.y - GlobalVariant.BALL_OFFSET
 
 	pass
 	
