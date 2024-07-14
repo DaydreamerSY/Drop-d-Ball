@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://eadygm7vvh36"]
+
+[ext_resource type="PackedScene" uid="uid://csm5d128ghsdn" path="res://Scenes/Level.tscn" id="1_b8rhr"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_imi4y"]
+[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_uakxj"]
+
+[node name="Level 3" instance=ExtResource("1_b8rhr")]
+level_id = 3
+
+[node name="Markers" parent="." index="4"]
+visible = true
+
+[node name="Marker Spawn" parent="Markers" index="1"]
+offset_left = 64.0
+offset_right = 128.0
+
+[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_imi4y")]
+position = Vector2(363, 296)
+rotation = 1.57079
+
+[node name="Wall 1x3 1" parent="Walls" index="1" instance=ExtResource("3_uakxj")]
+position = Vector2(93, 590)
+rotation = -0.785397
+
+[node name="Wall 1x2 2" parent="Walls" index="2" instance=ExtResource("2_imi4y")]
+position = Vector2(605, 741)

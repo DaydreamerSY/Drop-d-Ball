@@ -21,9 +21,7 @@ gravity_scale = 2.0
 script = ExtResource("1_2ujmr")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
 lifetime = 0.25
-one_shot = true
 explosiveness = 1.0
 texture = ExtResource("2_aaana")
 emission_shape = 1

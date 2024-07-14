@@ -84,5 +84,3 @@ offset_bottom = 1017.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Drag in [color=#45a9ec]Blue zone[/color] then look at  [color=#31de79]Green zone[/color]"
-
-[connection signal="pressed" from="UI/Pause" to="." method="_on_pause_pressed"]

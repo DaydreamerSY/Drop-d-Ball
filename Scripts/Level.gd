@@ -25,12 +25,14 @@ var ball_list
 var BALL_MOUSE_OFFSET = 1000
 
 var in_game_menu
+var goal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ball_tracker = $BallTracker
 	ball_list = $Balls
 	in_game_menu = $"UI/Pause Menu"
+	goal = $Goal
 	pass # Replace with function body.
 
 
@@ -96,8 +98,10 @@ func _on_restart_pressed():
 
 func _on_quit_pressed():
 	#current_level.call_deferred("queue_free") # change to new scene
-	LevelManager.changeScene(0)
+	LevelManager.back_to_main_menu()
 	in_game_menu.visible = false
+	#goal
+	LevelManager.camera_zoom_in_pos = goal.position
 	pass # Replace with function body.
 
 

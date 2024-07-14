@@ -5,8 +5,11 @@ extends RigidBody2D
 var reset_position
 var is_reset_to_new = false
 
+var particle : CPUParticles2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	particle = $CPUParticles2D
 	pass # Replace with function body.
 
 
@@ -37,9 +40,21 @@ func _integrate_forces(state):
 
 func _on_disappear_timer_timeout():
 	#queue_free()
+	# for features: map that do not allow stackup to win
 	pass # Replace with function body.
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+	pass # Replace with function body.
+
+
+func _on_body_entered(body):
+	print("Collide with ", body)
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_entered(area):
+	
+	particle.emitting = true
 	pass # Replace with function body.

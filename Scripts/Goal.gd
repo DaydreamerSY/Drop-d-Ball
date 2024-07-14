@@ -48,18 +48,20 @@ func _on_area_2d_body_entered(body:Node2D):
 		_tween.tween_property(
 			votex,
 			"rotation",
-			deg_to_rad(360 * rotate_direction),
+			deg_to_rad(180 * rotate_direction),
 			delay_time
 		)
 		_tween.tween_property(
 			duplicate_skin,
 			"scale",
 			Vector2(0, 0),
-			delay_time
+			delay_time*2
 		)
 		_tween.tween_callback(_remove_skin).set_delay(delay_time)
 		
-
+	if !LevelManager.is_at_main_menu:
+		LevelManager.nextLevel()
+		LevelManager.camera_zoom_in_pos = self.position
 	pass # Replace with function body.
 
 func _remove_skin():
@@ -68,6 +70,5 @@ func _remove_skin():
 	start_rotate = false
 	votex.rotation = 0
 	
-	if !LevelManager.is_at_main_menu:
-		LevelManager.nextLevel()
+	
 
