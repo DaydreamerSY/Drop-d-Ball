@@ -10,5 +10,7 @@ level_id = 2
 position = Vector2(363, 633)
 
 [node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_u6uhe")]
+position = Vector2(-264, -54)
+rotation = -0.854399
 is_rotate = true
 rotate_speed = 2

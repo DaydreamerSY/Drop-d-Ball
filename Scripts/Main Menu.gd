@@ -29,5 +29,6 @@ func _on_ball_timer_timeout():
 
 
 func _on_play_pressed():
-	#LevelManager.changeScene("")
+	LevelManager.continue_game_progress()
+	LevelManager.is_at_main_menu = false
 	pass # Replace with function body.

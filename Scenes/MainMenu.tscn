@@ -68,14 +68,13 @@ position = Vector2(379, 506)
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="BallSpawner" type="Path2D" parent="Balls"]
-position = Vector2(0, 119)
+position = Vector2(0, -1)
 curve = SubResource("Curve2D_xyqk3")
 
 [node name="BallSpawnerLocation" type="PathFollow2D" parent="Balls/BallSpawner"]
 position = Vector2(40, -58)
 
 [node name="BallTimer" type="Timer" parent="Balls/BallSpawner/BallSpawnerLocation"]
-wait_time = 2.0
 autostart = true
 
 [node name="Play" type="TextureButton" parent="."]
@@ -102,3 +101,4 @@ theme_override_font_sizes/font_size = 101
 text = "Balling Down"
 
 [connection signal="timeout" from="Balls/BallSpawner/BallSpawnerLocation/BallTimer" to="." method="_on_ball_timer_timeout"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

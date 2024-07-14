@@ -25,7 +25,7 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body:Node2D):
 	if body.is_in_group("ball"):
-		print("Ball fall into the hole: " , body)
+		#print("Ball fall into the hole: " , body)
 		var duplicate_skin = body.get_node("Skin").duplicate(true)
 		votex.call_deferred("add_child", duplicate_skin)
 		body.queue_free()
@@ -59,13 +59,15 @@ func _on_area_2d_body_entered(body:Node2D):
 		)
 		_tween.tween_callback(_remove_skin).set_delay(delay_time)
 		
-#if LevelManager
 
-pass # Replace with function body.
+	pass # Replace with function body.
 
 func _remove_skin():
 	for i in votex.get_children():
 		i.queue_free()
 	start_rotate = false
 	votex.rotation = 0
+	
+	if !LevelManager.is_at_main_menu:
+		LevelManager.nextLevel()
 

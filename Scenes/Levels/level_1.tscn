@@ -1,16 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://drw0iexupl4tr"]
+[gd_scene load_steps=4 format=3 uid="uid://drw0iexupl4tr"]
 
 [ext_resource type="PackedScene" uid="uid://csm5d128ghsdn" path="res://Scenes/Level.tscn" id="1_xas43"]
 [ext_resource type="Texture2D" uid="uid://digowx2ep700x" path="res://Assets/Cursors/hand_point.png" id="2_jbrji"]
 [ext_resource type="Texture2D" uid="uid://dub8kg7hvj07v" path="res://Assets/Cursors/check_round_round_circle.png" id="2_n48eg"]
-[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_srwny"]
-[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_tbhrt"]
 
 [node name="Level 1" instance=ExtResource("1_xas43")]
 level_id = 1
 
 [node name="Goal" parent="." index="3"]
-position = Vector2(194, 766)
+position = Vector2(123, 766)
 
 [node name="Markers" parent="." index="4"]
 visible = true
@@ -86,13 +84,5 @@ offset_bottom = 1017.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Drag in [color=#45a9ec]Blue zone[/color] then look at  [color=#31de79]Green zone[/color]"
-
-[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_srwny")]
-position = Vector2(128, 340)
-rotation = -0.853686
-
-[node name="Wall 1x3 1" parent="Walls" index="1" instance=ExtResource("3_tbhrt")]
-position = Vector2(517, 605)
-rotation = 0.76208
 
 [connection signal="pressed" from="UI/Pause" to="." method="_on_pause_pressed"]
