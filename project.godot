@@ -43,3 +43,4 @@ Tap={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.129412, 0.129412, 0.145098, 1)
