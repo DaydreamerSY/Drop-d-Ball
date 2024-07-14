@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ulb5xajw34e"]
+
+[ext_resource type="PackedScene" uid="uid://csm5d128ghsdn" path="res://Scenes/Level.tscn" id="1_oytdu"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_u6uhe"]
+
+[node name="Level 2" instance=ExtResource("1_oytdu")]
+level_id = 2
+
+[node name="Walls" parent="." index="6"]
+position = Vector2(363, 633)
+
+[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_u6uhe")]
+is_rotate = true
+rotate_speed = 2

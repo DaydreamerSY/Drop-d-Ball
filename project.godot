@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalVariant="*res://Scripts/Packages/Load at startup/GlobalVariant.gd"
 AdjustScreen="*res://Scripts/Packages/Load at startup/AdjustScreen.gd"
+LevelManager="*res://Scenes/LevelManager.tscn"
 
 [display]
 

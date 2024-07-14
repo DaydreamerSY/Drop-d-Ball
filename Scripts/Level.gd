@@ -1,8 +1,10 @@
 @tool
 extends Node2D
 
+@export var level_id = -1
 
 @export var ball_scene: PackedScene
+var is_paused = false
 
 
 var ball_tracker
@@ -22,16 +24,22 @@ var is_mouse_down = false
 var ball_list
 var BALL_MOUSE_OFFSET = 1000
 
+var in_game_menu
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ball_tracker = $BallTracker
 	ball_list = $Balls
+	in_game_menu = $"UI/Pause Menu"
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 
+	if is_paused:
+		return
+		
 	
 	if is_instance_valid(current_ball) and current_ball.global_position.distance_to(recently_spawn_ball_position) <= DISTANCE_THRESHOLD:
 		is_start_adding_points = true
@@ -53,6 +61,9 @@ func _process(_delta):
 
 
 func _input(event):
+	if is_paused:
+		return
+	
 	if event.is_action_pressed("Tap"):
 		# ball.reset_status(get_global_mouse_position())
 		#print("mouse down")
@@ -78,4 +89,25 @@ func _input(event):
 func _on_restart_pressed():
 	for ball in ball_list.get_children():
 		ball.queue_free()
+	ball_tracker.clear_points()
+	_on_close_pressed()
+	pass # Replace with function body.
+
+
+func _on_quit_pressed():
+	#current_level.call_deferred("queue_free") # change to new scene
+	LevelManager.changeScene(0)
+	in_game_menu.visible = false
+	pass # Replace with function body.
+
+
+func _on_close_pressed():
+	in_game_menu.visible = false
+	is_paused = false
+	pass # Replace with function body.
+
+
+func _on_pause_pressed():
+	in_game_menu.visible = true
+	is_paused = true
 	pass # Replace with function body.

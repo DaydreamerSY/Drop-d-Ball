@@ -1,0 +1,35 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://baew2m5antama"]
+
+[ext_resource type="Texture2D" uid="uid://dieometce1qx1" path="res://Assets/Retina/background_brown.png" id="1_7lyfa"]
+[ext_resource type="Texture2D" uid="uid://rn1mh80wucpq" path="res://Assets/Retina/background_blue.png" id="2_inbpe"]
+[ext_resource type="Texture2D" uid="uid://c56kosltirdaj" path="res://Assets/Retina/background_green.png" id="3_u8viu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rummi"]
+texture = ExtResource("1_7lyfa")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyu4u"]
+texture = ExtResource("2_inbpe")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pjec"]
+texture = ExtResource("3_u8viu")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_rummi")
+sources/1 = SubResource("TileSetAtlasSource_jyu4u")
+sources/2 = SubResource("TileSetAtlasSource_4pjec")

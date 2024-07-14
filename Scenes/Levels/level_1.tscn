@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_tbhrt"]
 
 [node name="Level 1" instance=ExtResource("1_xas43")]
+level_id = 1
 
 [node name="Goal" parent="." index="3"]
 position = Vector2(194, 766)
@@ -94,6 +95,4 @@ rotation = -0.853686
 position = Vector2(517, 605)
 rotation = 0.76208
 
-[node name="UI" parent="." index="7"]
-offset_right = 0.0
-offset_bottom = 0.0
+[connection signal="pressed" from="UI/Pause" to="." method="_on_pause_pressed"]

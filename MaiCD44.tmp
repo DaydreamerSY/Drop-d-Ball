@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://bafl8arldx0kl"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_8vbdu"]
+[ext_resource type="PackedScene" uid="uid://drw0iexupl4tr" path="res://Scenes/Levels/level_1.tscn" id="1_ciyfj"]
+[ext_resource type="Texture2D" uid="uid://c5dggiolhmtun" path="res://Assets/Menu/Item3.png" id="2_cjxfa"]
+[ext_resource type="Texture2D" uid="uid://c6lioftun6tlw" path="res://Assets/Menu/Icon_DotsHorizontal.png" id="2_n8qh1"]
+[ext_resource type="Texture2D" uid="uid://bj6w282k54hg2" path="res://Assets/Menu/Icon_Return.png" id="3_r44p3"]
+[ext_resource type="FontFile" uid="uid://drsbesnuxws12" path="res://Assets/Font/MilkyNice.ttf" id="4_0to85"]
+[ext_resource type="Texture2D" uid="uid://6rto6oml2i0" path="res://Assets/Menu/Icon_Exit.png" id="5_myjpb"]
+[ext_resource type="Texture2D" uid="uid://cn0fwy51byrhl" path="res://Assets/Menu/Icon_X.png" id="6_obu2i"]
+
+[node name="Level manager" type="Node2D"]
+script = ExtResource("1_8vbdu")
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level 1" parent="Levels" instance=ExtResource("1_ciyfj")]
+
+[node name="UI" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="Pause" type="TextureButton" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = 49.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_n8qh1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Pause Menu" type="NinePatchRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -143.0
+offset_right = 245.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cjxfa")
+region_rect = Rect2(0, 0, 922, 813)
+patch_margin_left = 84
+patch_margin_top = 138
+patch_margin_right = 81
+patch_margin_bottom = 122
+
+[node name="Restart" type="TextureButton" parent="UI/Pause Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_r44p3")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Label" type="Label" parent="UI/Pause Menu/Restart"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.5
+offset_right = 83.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_0to85")
+theme_override_font_sizes/font_size = 47
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="UI/Pause Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -40.0
+offset_right = -61.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_myjpb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="UI/Pause Menu/Quit"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.5
+offset_right = 83.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_0to85")
+theme_override_font_sizes/font_size = 47
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="TextureButton" parent="UI/Pause Menu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 66.0
+grow_horizontal = 0
+pivot_offset = Vector2(32, 32)
+texture_normal = ExtResource("6_obu2i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="UI/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="UI/Pause Menu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Pause Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/Pause Menu/Close" to="." method="_on_close_pressed"]
