@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_ug8ga"]
 [ext_resource type="PackedScene" uid="uid://clw4b1va66fjh" path="res://Scenes/Ball.tscn" id="2_6c7v5"]
-[ext_resource type="TileSet" uid="uid://baew2m5antama" path="res://Assets/tileset_background.tres" id="3_c0l3b"]
+[ext_resource type="TileSet" uid="uid://2xmyauo1k7l7" path="res://Assets/tileset_background.tres" id="3_c0l3b"]
 [ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="4_aa1gb"]
 [ext_resource type="Texture2D" uid="uid://b67no73greewx" path="res://Assets/Menu/fake-bg.png" id="4_l6lgu"]
 [ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="5_qlrom"]
@@ -39,6 +39,14 @@ expand_mode = 1
 position = Vector2(103, 431)
 rotation = -0.820486
 
+[node name="Wall 1x2 4" parent="Walls" instance=ExtResource("4_aa1gb")]
+position = Vector2(48, 1230)
+rotation = -0.820486
+
+[node name="Wall 1x2 5" parent="Walls" instance=ExtResource("4_aa1gb")]
+position = Vector2(662, 1223)
+rotation = -2.2708
+
 [node name="Wall 1x3 1" parent="Walls" instance=ExtResource("5_qlrom")]
 position = Vector2(563, 659)
 rotation = 0.833126
@@ -54,6 +62,10 @@ rotate_direction = -1
 [node name="Wall 1x3 2" parent="Walls" instance=ExtResource("5_qlrom")]
 position = Vector2(488, 262)
 is_rotate = true
+
+[node name="Wall 1x3 3" parent="Walls" instance=ExtResource("5_qlrom")]
+position = Vector2(362, 1273)
+rotation = 1.5708
 
 [node name="Wall 1x2 3" parent="Walls" instance=ExtResource("4_aa1gb")]
 position = Vector2(98, 1154)

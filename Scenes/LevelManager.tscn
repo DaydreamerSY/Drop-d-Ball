@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2rwijtqx6jb7"]
 
 [ext_resource type="Script" path="res://Scripts/Packages/LevelManager.gd" id="1_bqcfe"]
-[ext_resource type="PackedScene" path="res://Scenes/MainMenu.tscn" id="2_vsx1m"]
+[ext_resource type="PackedScene" uid="uid://c018g65e14m8k" path="res://Scenes/MainMenu.tscn" id="2_vsx1m"]
 
 [node name="Level manager" type="Node2D"]
 script = ExtResource("1_bqcfe")

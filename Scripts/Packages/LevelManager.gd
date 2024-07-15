@@ -134,7 +134,7 @@ func changeScene(scene_id):
 	#print("List levels available: ", SCENE_LIST)
 	level_list.get_children()[0].queue_free()
 	
-	await get_tree().create_timer(0.2).timeout
+	await level_list.child_order_changed
 	
 	print(level_list.get_children())
 	if level_list.get_children() == []:

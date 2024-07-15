@@ -26,12 +26,16 @@ var ball_list
 var in_game_menu
 var goal
 
+var level_label
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ball_tracker = $BallTracker
 	ball_list = $Balls
 	in_game_menu = $"UI/Pause Menu"
 	goal = $Goal
+	level_label = $UI/Label
+	level_label.text = get_name()
 	pass # Replace with function body.
 
 

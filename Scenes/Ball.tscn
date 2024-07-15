@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clw4b1va66fjh"]
+[gd_scene load_steps=8 format=3 uid="uid://clw4b1va66fjh"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_2ujmr"]
 [ext_resource type="Texture2D" uid="uid://cr1g58557tuua" path="res://Assets/Particles/star_outline.png" id="2_aaana"]
@@ -10,6 +10,9 @@ bounce = 0.8
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g0i8"]
 radius = 29.0
 
+[sub_resource type="Gradient" id="Gradient_cx3nl"]
+colors = PackedColorArray(1, 0.298039, 0.380392, 1, 1, 1, 1, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_em0h5"]
 radius = 30.0
 
@@ -17,25 +20,7 @@ radius = 30.0
 position = Vector2(-39, -40)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_lnnd3")
-gravity_scale = 2.0
 script = ExtResource("1_2ujmr")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
-lifetime = 0.25
-one_shot = true
-explosiveness = 1.0
-texture = ExtResource("2_aaana")
-emission_shape = 1
-emission_sphere_radius = 54.2
-direction = Vector2(0, 0)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 30.0
-initial_velocity_max = 50.0
-scale_amount_min = 0.07
-scale_amount_max = 0.1
-color = Color(1, 0.298039, 0.380392, 1)
 
 [node name="Skin" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -61,7 +46,27 @@ autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_aaana")
+emission_shape = 2
+emission_sphere_radius = 21.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+angular_velocity_max = 362.29
+scale_amount_min = 0.07
+scale_amount_max = 0.14
+color = Color(1, 0.298039, 0.380392, 1)
+color_ramp = SubResource("Gradient_cx3nl")
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_em0h5")

@@ -45,6 +45,7 @@ func _on_disappear_timer_timeout():
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	await get_tree().create_timer(2).timeout
 	queue_free()
 	pass # Replace with function body.
 

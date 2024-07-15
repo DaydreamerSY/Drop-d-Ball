@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://clw4b1va66fjh" path="res://Scenes/Ball.tscn" id="2_0j8vj"]
 [ext_resource type="TileSet" uid="uid://2xmyauo1k7l7" path="res://Assets/tileset_background.tres" id="3_7xdko"]
 [ext_resource type="Texture2D" uid="uid://b67no73greewx" path="res://Assets/Menu/fake-bg.png" id="4_8gtvi"]
-[ext_resource type="PackedScene" path="res://Scenes/Goal.tscn" id="6_kj8he"]
+[ext_resource type="PackedScene" uid="uid://dew8nv7dd1fx" path="res://Scenes/Goal.tscn" id="6_kj8he"]
 [ext_resource type="Texture2D" uid="uid://dub8kg7hvj07v" path="res://Assets/Cursors/check_round_round_circle.png" id="7_7ay8l"]
-[ext_resource type="Texture2D" uid="uid://c6lioftun6tlw" path="res://Assets/Menu/Icon_DotsHorizontal.png" id="7_l2kgp"]
 [ext_resource type="Texture2D" uid="uid://c5dggiolhmtun" path="res://Assets/Menu/Item3.png" id="8_husda"]
 [ext_resource type="Texture2D" uid="uid://s0f35blav7cs" path="res://Assets/Cursors/target_a.png" id="8_liygq"]
+[ext_resource type="Texture2D" uid="uid://ckduc8s06sd16" path="res://Assets/Menu/Icon_Home.png" id="8_myapc"]
 [ext_resource type="Texture2D" uid="uid://bj6w282k54hg2" path="res://Assets/Menu/Icon_Return.png" id="9_4ydcg"]
 [ext_resource type="FontFile" uid="uid://drsbesnuxws12" path="res://Assets/Font/MilkyNice.ttf" id="11_2eyv1"]
 [ext_resource type="Texture2D" uid="uid://6rto6oml2i0" path="res://Assets/Menu/Icon_Exit.png" id="11_cl376"]
@@ -93,15 +93,34 @@ anchors_preset = 0
 offset_right = 720.0
 offset_bottom = 1280.0
 
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.5
+offset_right = 25.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_2eyv1")
+theme_override_font_sizes/font_size = 46
+text = "Level x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Pause" type="TextureButton" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -90.0
-offset_bottom = 29.0
+offset_left = -67.0
+offset_top = 16.0
+offset_right = -60.0
+offset_bottom = 25.0
 grow_horizontal = 0
-texture_normal = ExtResource("7_l2kgp")
+scale = Vector2(7.36, 6.48)
+mouse_force_pass_scroll_events = false
+texture_normal = ExtResource("8_myapc")
 ignore_texture_size = true
 stretch_mode = 0
 
