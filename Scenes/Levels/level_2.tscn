@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://4ulb5xajw34e"]
 
-[ext_resource type="PackedScene" uid="uid://csm5d128ghsdn" path="res://Scenes/Level.tscn" id="1_oytdu"]
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_oytdu"]
 [ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_u6uhe"]
 [ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_nc6bw"]
 
@@ -10,7 +10,7 @@ level_id = 2
 [node name="Goal" parent="." index="3"]
 position = Vector2(657, 767)
 
-[node name="Marker Goal" parent="Markers" index="0"]
+[node name="Marker Goal" parent="Markers" index="1"]
 offset_left = 625.0
 offset_right = 689.0
 
