@@ -19,11 +19,12 @@ var is_at_main_menu = true # for animation in main menu not accident go to level
 
 # camera zoom anim
 var camera
+var DEFAULT_CAMERA_POS = Vector2(540,960)
 var camera_zoom_in_pos = Vector2(0,0): set= _set_camera_zoom_in_pos
 var zoom_in_main_menu_pos = [
-	Vector2(604,939),
-	Vector2(89, 909),
-	Vector2(379, 506)
+	Vector2(797,1090),
+	Vector2(282, 1060),
+	Vector2(572, 657)
 ]
 var zoom_in_second = 0.75
 var zoom_factor = 1
@@ -55,7 +56,7 @@ func _ready():
 	# 1000 in (720x1280) equal ? in other size -> 1000/1280
 	
 	#GlobalVariant.BALL_OFFSET = DisplayServer.screen_get_size().y * 1000/1280
-	GlobalVariant.BALL_OFFSET = 1025
+	GlobalVariant.BALL_OFFSET = 1500
 	print(GlobalVariant.BALL_OFFSET)
 	pass # Replace with function body.
 
@@ -64,8 +65,8 @@ func _ready():
 func _process(delta):
 	if is_designing_level:
 		if go:
-			changeScene(go_to_lv)
 			go = false
+			changeScene(go_to_lv)
 			
 	
 	if next_scene_to_be_change != -1:
@@ -139,7 +140,7 @@ func changeScene(scene_id):
 	print(level_list.get_children())
 	if level_list.get_children() == []:
 		camera.zoom = Vector2(1, 1)
-		camera.position = Vector2(360,640)
+		camera.position = DEFAULT_CAMERA_POS
 		
 		if scene_id == 0:
 			is_at_main_menu = true
@@ -165,7 +166,7 @@ func changeScene(scene_id):
 		await _tween_between.finished
 		
 		#camera.zoom = Vector2(1, 1)
-		camera.position = Vector2(360,640)
+		camera.position = DEFAULT_CAMERA_POS
 		
 		map.scale = Vector2(0,0)
 		map.position = camera.position

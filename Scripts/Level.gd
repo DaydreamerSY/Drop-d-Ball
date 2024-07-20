@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 @export var level_id = -1
@@ -19,6 +18,8 @@ var old_ball_position = Vector2(0, 0)
 var new_ball_position  = Vector2(0, 0)
 var CHANGE_POSITION_THRESHOLD = 2
 
+var BALL_SPRITE_OFFSET = Vector2(45, 45)
+
 var is_mouse_down = false
 
 var ball_list
@@ -27,15 +28,18 @@ var in_game_menu
 var goal
 
 var level_label
+var ui
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ball_tracker = $BallTracker
 	ball_list = $Balls
+	ui = $UI
 	in_game_menu = $"UI/Pause Menu"
 	goal = $Goal
 	level_label = $UI/Label
 	level_label.text = get_name()
+	ui.visible = true
 	pass # Replace with function body.
 
 
@@ -84,6 +88,8 @@ func _input(event):
 		if is_instance_valid(current_ball):
 			ball_tracker.clear_points()
 			current_ball.reset_status(current_ball.global_position)
+		#if is_instance_valid(current_ball):
+			print(current_ball.global_position - BALL_SPRITE_OFFSET)
 		pass
 		
 	pass

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg5pef872a4jp"]
+
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_j5iaq"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_l8p1h"]
+[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_l4h8h"]
+
+[node name="Level 27" instance=ExtResource("1_j5iaq")]
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(141, 975)
+
+[node name="Marker Spawn" parent="Markers" index="0"]
+offset_left = 82.0
+offset_top = 181.0
+offset_right = 163.0
+offset_bottom = 262.0
+
+[node name="Marker Goals" parent="Markers" index="1"]
+offset_left = 109.0
+offset_top = 941.0
+offset_right = 173.0
+offset_bottom = 1005.0
+
+[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_l8p1h")]
+position = Vector2(115, 408)
+rotation = -0.785398
+
+[node name="Wall 1x3 1" parent="Walls" index="1" instance=ExtResource("3_l4h8h")]
+position = Vector2(601, 799)
+rotation = 0.785398
+
+[node name="Wall 1x3 2" parent="Walls" index="2" instance=ExtResource("3_l4h8h")]
+position = Vector2(411, 737)
+rotation = -0.261799
+
+[node name="Label" parent="UI" index="0"]
+text = "Level 27"

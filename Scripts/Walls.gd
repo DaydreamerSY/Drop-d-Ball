@@ -9,11 +9,18 @@ extends Node2D
 @export var move_from = Vector2(0,0)
 @export var move_to = Vector2(0,0)
 @export var move_speed = 0.5
+#@export_category("Default state")
+#@export_enum("Horizontal:90", "45 slash:45", "45 backslash:-45") var Rotation = 0 : set = _set_quick_rotation
 
 # moving
 var next_destination
 var QUAY_XE_THRESHOLD = 5
 var move_step 
+
+# set, get func for export variant
+func _set_quick_rotation(value):
+	rotation = value
+	pass
 
 func _ready():
 	next_destination = move_to

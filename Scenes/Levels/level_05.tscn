@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3r30ey4fx3bo"]
+
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_uecao"]
+[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_daga6"]
+
+[node name="Level 5" instance=ExtResource("1_uecao")]
+level_id = -1
+
+[node name="Markers" parent="." index="4"]
+visible = true
+
+[node name="Marker Goals" parent="Markers" index="1"]
+visible = false
+
+[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_daga6")]
+position = Vector2(434, 623)
+is_rotate = true
+
+[node name="Wall 1x2 2" parent="Walls" index="1" instance=ExtResource("2_daga6")]
+position = Vector2(269, 623.227)
+is_rotate = true
+rotate_direction = -1

@@ -20,6 +20,7 @@ radius = 30.0
 position = Vector2(-39, -40)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_lnnd3")
+gravity_scale = 2.0
 script = ExtResource("1_2ujmr")
 
 [node name="Skin" type="TextureRect" parent="."]
