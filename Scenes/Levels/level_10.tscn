@@ -36,6 +36,6 @@ position = Vector2(432, 384)
 rotation = 1.5708
 
 [node name="Wall narrow 1x6" parent="Walls" index="4" instance=ExtResource("4_2oayn")]
-position = Vector2(688, 976)
+position = Vector2(656, 1104)
 is_rotate = true
 rotate_speed = 0.25
