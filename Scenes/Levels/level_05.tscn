@@ -1,22 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3r30ey4fx3bo"]
+[gd_scene load_steps=5 format=3 uid="uid://dj43f4gqqao6i"]
 
 [ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_uecao"]
-[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_daga6"]
+[ext_resource type="PackedScene" uid="uid://cvfua6irsmtgg" path="res://Scenes/Wall v2/wall_block_corner_1x4.tscn" id="2_5khp7"]
+[ext_resource type="PackedScene" uid="uid://m71r0lmdnecv" path="res://Scenes/Wall v2/wall_narrow_1x4.tscn" id="2_5qyct"]
+[ext_resource type="PackedScene" uid="uid://ced7avjtjrb50" path="res://Scenes/Wall v2/wall_block_corner_1x4_right.tscn" id="3_wpw65"]
 
 [node name="Level 5" instance=ExtResource("1_uecao")]
-level_id = -1
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(896, 864)
 
 [node name="Markers" parent="." index="4"]
 visible = true
 
+[node name="Marker Spawn" parent="Markers" index="0"]
+offset_left = 202.0
+offset_top = 125.0
+offset_right = 282.0
+offset_bottom = 205.0
+
 [node name="Marker Goals" parent="Markers" index="1"]
 visible = false
+offset_left = 320.0
+offset_top = 368.0
+offset_right = 384.0
+offset_bottom = 432.0
 
-[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_daga6")]
-position = Vector2(434, 623)
-is_rotate = true
+[node name="Wall corner 2x2" parent="Walls" index="0" instance=ExtResource("2_5khp7")]
+position = Vector2(224, 784)
 
-[node name="Wall 1x2 2" parent="Walls" index="1" instance=ExtResource("2_daga6")]
-position = Vector2(269, 623.227)
-is_rotate = true
-rotate_direction = -1
+[node name="Wall block corner 1x4 right" parent="Walls" index="1" instance=ExtResource("3_wpw65")]
+position = Vector2(880, 624)
+
+[node name="Wall narrow 1x4" parent="Walls" index="2" instance=ExtResource("2_5qyct")]
+position = Vector2(528, 816)
+rotation = 1.5708
+
+[node name="Label hint" parent="UI" index="1"]
+text = "Nice eaves"

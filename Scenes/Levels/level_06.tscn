@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3r30ey4fx3bo"]
+
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_uecao"]
+[ext_resource type="PackedScene" uid="uid://m71r0lmdnecv" path="res://Scenes/Wall v2/wall_narrow_1x4.tscn" id="2_5qyct"]
+
+[node name="Level 6" instance=ExtResource("1_uecao")]
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(512, 1024)
+
+[node name="Markers" parent="." index="4"]
+visible = true
+
+[node name="Marker Spawn" parent="Markers" index="0"]
+offset_left = 480.0
+offset_top = 160.0
+offset_right = 565.0
+offset_bottom = 245.0
+
+[node name="Marker Goals" parent="Markers" index="1"]
+visible = false
+
+[node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_5qyct")]
+position = Vector2(448, 544)
+is_rotate = true

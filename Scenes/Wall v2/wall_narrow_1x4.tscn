@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://m71r0lmdnecv"]
+
+[ext_resource type="PackedScene" uid="uid://bwe1ok4q775gd" path="res://Scenes/Wall v2.tscn" id="1_bjid3"]
+
+[node name="Wall narrow 1x4" instance=ExtResource("1_bjid3")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Area2D" index="0"]
+polygon = PackedVector2Array(32, -123.5, 32, 123, 27.6, 128, -27, 128, -32, 123.6, -32, -123.5, -26, -128, 26, -128)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" index="0"]
+polygon = PackedVector2Array(32, -123.5, 32, 123, 27.6, 128, -27, 128, -32, 123.6, -32, -123.5, -26, -128, 26, -128)

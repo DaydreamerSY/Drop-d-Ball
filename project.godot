@@ -25,11 +25,19 @@ LevelManager="*res://Scenes/LevelManager.tscn"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
+window/size/initial_position_type=2
 window/size/window_width_override=360
 window/size/window_height_override=640
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/Levels/": "yellow",
+"res://Scenes/Wall v2/": "blue"
+}
 
 [input]
 
@@ -41,6 +49,7 @@ Tap={
 
 [rendering]
 
+textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.129412, 0.129412, 0.145098, 1)

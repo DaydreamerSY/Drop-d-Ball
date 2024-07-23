@@ -32,6 +32,3 @@ rotation = 0.785398
 [node name="Wall 1x3 2" parent="Walls" index="2" instance=ExtResource("3_l4h8h")]
 position = Vector2(411, 737)
 rotation = -0.261799
-
-[node name="Label" parent="UI" index="0"]
-text = "Level 27"

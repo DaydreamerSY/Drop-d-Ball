@@ -19,7 +19,7 @@ func _ready():
 	_tween.tween_property(
 		self,
 		"position",
-		Vector2(372,1153),
+		Vector2(126,1714),
 		tuto_time
 	)
 	_tween.tween_callback(reset_position).set_delay(1)

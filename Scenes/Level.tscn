@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfdq63cjmvi6f"]
+[gd_scene load_steps=17 format=3 uid="uid://bfdq63cjmvi6f"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_al1ji"]
 [ext_resource type="PackedScene" uid="uid://clw4b1va66fjh" path="res://Scenes/Ball.tscn" id="2_0j8vj"]
 [ext_resource type="PackedScene" uid="uid://dqjl3uoweaqwx" path="res://Scenes/Background.tscn" id="3_kakct"]
+[ext_resource type="Shader" path="res://Shaders/line_shader.gdshader" id="4_kt8rx"]
+[ext_resource type="Texture2D" uid="uid://bh70d10lr5w07" path="res://Assets/Particles/Line_wool.png" id="4_mewtj"]
 [ext_resource type="PackedScene" uid="uid://dew8nv7dd1fx" path="res://Scenes/Goal.tscn" id="6_kj8he"]
 [ext_resource type="Texture2D" uid="uid://dub8kg7hvj07v" path="res://Assets/Cursors/check_round_round_circle.png" id="7_7ay8l"]
 [ext_resource type="Texture2D" uid="uid://c5dggiolhmtun" path="res://Assets/Menu/Item3.png" id="8_husda"]
@@ -13,24 +15,30 @@
 [ext_resource type="Texture2D" uid="uid://6rto6oml2i0" path="res://Assets/Menu/Icon_Exit.png" id="11_cl376"]
 [ext_resource type="Texture2D" uid="uid://cn0fwy51byrhl" path="res://Assets/Menu/Icon_X.png" id="12_i65r0"]
 
-[sub_resource type="Curve" id="Curve_otnxb"]
-_data = [Vector2(0, 0.306081), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kerx0"]
+shader = ExtResource("4_kt8rx")
+shader_parameter/scrolling_speed = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_4g28v"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_al1ji")
-level_id = null
 ball_scene = ExtResource("2_0j8vj")
 
 [node name="Background" parent="." instance=ExtResource("3_kakct")]
 
 [node name="BallTracker" type="Line2D" parent="."]
 top_level = true
+material = SubResource("ShaderMaterial_kerx0")
 points = PackedVector2Array(449, 247)
-width_curve = SubResource("Curve_otnxb")
-default_color = Color(1, 0.298039, 0.380392, 1)
+width = 15.0
+texture = ExtResource("4_mewtj")
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 0.0
+round_precision = 1
+antialiased = true
 
 [node name="wall" type="StaticBody2D" parent="."]
 position = Vector2(-34, 221)
@@ -59,12 +67,13 @@ visible = false
 custom_minimum_size = Vector2(80, 80)
 offset_left = 161.0
 offset_top = 735.0
-offset_right = 246.0
-offset_bottom = 820.0
-pivot_offset = Vector2(45, 45)
+offset_right = 241.0
+offset_bottom = 815.0
+pivot_offset = Vector2(40, 40)
 texture = ExtResource("7_7ay8l")
 
 [node name="Marker Goals" type="TextureRect" parent="Markers"]
+visible = false
 offset_left = 93.0
 offset_top = 100.0
 offset_right = 157.0
@@ -80,33 +89,47 @@ texture = ExtResource("8_liygq")
 top_level = true
 layout_mode = 3
 anchors_preset = 0
-offset_right = 720.0
-offset_bottom = 1280.0
+offset_right = 1080.0
+offset_bottom = 1920.0
 
-[node name="Label" type="Label" parent="UI"]
+[node name="Label level" type="Label" parent="UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -25.5
-offset_right = 25.5
-offset_bottom = 23.0
+offset_left = -57.5
+offset_top = 16.0
+offset_right = 57.5
+offset_bottom = 72.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("11_2eyv1")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 51
 text = "Level"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label hint" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_2eyv1")
+theme_override_font_sizes/font_size = 51
+autowrap_mode = 3
 
 [node name="Pause" type="TextureButton" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -67.0
+offset_left = -107.0
 offset_top = 16.0
-offset_right = -60.0
-offset_bottom = 25.0
+offset_right = -95.0
+offset_bottom = 32.0
 grow_horizontal = 0
 scale = Vector2(7.36, 6.48)
 mouse_force_pass_scroll_events = false

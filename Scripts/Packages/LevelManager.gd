@@ -56,18 +56,19 @@ func _ready():
 	# 1000 in (720x1280) equal ? in other size -> 1000/1280
 	
 	#GlobalVariant.BALL_OFFSET = DisplayServer.screen_get_size().y * 1000/1280
-	GlobalVariant.BALL_OFFSET = 1500
+	GlobalVariant.BALL_OFFSET = 1610
 	print(GlobalVariant.BALL_OFFSET)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	GlobalVariant.DESIGN_MODE = is_designing_level
+	
 	if is_designing_level:
 		if go:
 			go = false
 			changeScene(go_to_lv)
-			
 	
 	if next_scene_to_be_change != -1:
 		print(next_scene_to_be_change)
@@ -112,7 +113,7 @@ func dir_contents(path):
 func changeScene(scene_id):
 	
 	var _anim_out_time = 2
-	var zoom_scale = 30
+	var zoom_scale = 50
 	
 	var _tween_out = create_tween().set_parallel()
 	_tween_out.tween_property(

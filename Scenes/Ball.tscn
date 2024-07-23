@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clw4b1va66fjh"]
+[gd_scene load_steps=7 format=3 uid="uid://clw4b1va66fjh"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_2ujmr"]
 [ext_resource type="Texture2D" uid="uid://cr1g58557tuua" path="res://Assets/Particles/star_outline.png" id="2_aaana"]
@@ -7,14 +7,11 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lnnd3"]
 bounce = 0.8
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1g0i8"]
-radius = 29.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8kyyh"]
+radius = 32.1403
 
 [sub_resource type="Gradient" id="Gradient_cx3nl"]
 colors = PackedColorArray(1, 0.298039, 0.380392, 1, 1, 1, 1, 1)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_em0h5"]
-radius = 30.0
 
 [node name="Ball" type="RigidBody2D" groups=["ball"]]
 position = Vector2(-39, -40)
@@ -22,6 +19,9 @@ disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_lnnd3")
 gravity_scale = 2.0
 script = ExtResource("1_2ujmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8kyyh")
 
 [node name="Skin" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -38,8 +38,9 @@ grow_vertical = 2
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("2_rkya3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1g0i8")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_rkya3")
 
 [node name="DisappearTimer" type="Timer" parent="."]
 wait_time = 15.0
@@ -69,8 +70,8 @@ color_ramp = SubResource("Gradient_cx3nl")
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_em0h5")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8kyyh")
 
 [connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

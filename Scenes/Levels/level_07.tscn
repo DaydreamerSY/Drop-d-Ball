@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpu6gca3e1k7w"]
+
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_xb8f8"]
+[ext_resource type="PackedScene" uid="uid://m71r0lmdnecv" path="res://Scenes/Wall v2/wall_narrow_1x4.tscn" id="2_gikus"]
+[ext_resource type="PackedScene" uid="uid://ced7avjtjrb50" path="res://Scenes/Wall v2/wall_block_corner_1x4_right.tscn" id="3_cvpe2"]
+
+[node name="Level 7" instance=ExtResource("1_xb8f8")]
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(208, 1008)
+
+[node name="Marker Spawn" parent="Markers" index="0"]
+offset_left = 832.0
+offset_top = 80.0
+offset_right = 917.0
+offset_bottom = 165.0
+
+[node name="Marker Goals" parent="Markers" index="1"]
+visible = false
+
+[node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_gikus")]
+position = Vector2(544, 832)
+is_rotate = true
+rotate_direction = -1
+rotate_speed = 0.5
+
+[node name="Wall block corner 1x4 right" parent="Walls" index="1" instance=ExtResource("3_cvpe2")]
+position = Vector2(896, 640)

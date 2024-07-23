@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ced7avjtjrb50"]
+
+[ext_resource type="PackedScene" uid="uid://bwe1ok4q775gd" path="res://Scenes/Wall v2.tscn" id="1_o1hv3"]
+[ext_resource type="Texture2D" uid="uid://bm5mqgib83wbk" path="res://Assets/Retina/block_corner.png" id="2_e1f21"]
+
+[node name="Wall block corner 1x4 right" instance=ExtResource("1_o1hv3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_e1f21")
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Area2D" index="0"]
+polygon = PackedVector2Array(-65, 28.2, -65, 59, -60.6, 64, 58, 64, 63, 59.6, 63, -59.5, 57, -64, 28, -64)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-65, 28.2, -65, 59, -60.6, 64, 58, 64, 63, 59.6, 63, -59.5, 57, -64, 28, -64)

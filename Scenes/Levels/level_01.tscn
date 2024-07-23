@@ -9,27 +9,30 @@
 level_id = 1
 
 [node name="Goal" parent="." index="3"]
-position = Vector2(123, 766)
+position = Vector2(169, 771)
+
+[node name="Markers" parent="." index="4"]
+visible = true
 
 [node name="Marker Spawn" parent="Markers" index="0"]
-offset_left = 79.0
-offset_top = 88.0
-offset_right = 164.0
-offset_bottom = 173.0
+offset_left = 126.0
+offset_top = 57.0
+offset_right = 211.0
+offset_bottom = 142.0
 
 [node name="Marker Goals" parent="Markers" index="1"]
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Markers" index="2"]
-offset_left = 563.0
-offset_top = 1111.0
-offset_right = 638.0
-offset_bottom = 1186.0
+offset_left = 807.0
+offset_top = 1678.0
+offset_right = 882.0
+offset_bottom = 1753.0
 texture = ExtResource("2_n48eg")
 expand_mode = 1
 
 [node name="Line2D2" type="Line2D" parent="Markers" index="3"]
-position = Vector2(-196, -1023)
+position = Vector2(-118, -1051)
 points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
 joint_mode = 2
 begin_cap_mode = 2
@@ -50,7 +53,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="Line2D3" type="Line2D" parent="Markers" index="4"]
-position = Vector2(-2, 0)
+position = Vector2(242, 567)
 points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
 joint_mode = 2
 begin_cap_mode = 2
@@ -71,10 +74,10 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="Tuto Hand" type="TextureRect" parent="Markers" index="5"]
-offset_left = 569.0
-offset_top = 1150.0
-offset_right = 689.0
-offset_bottom = 1270.0
+offset_left = 813.0
+offset_top = 1714.0
+offset_right = 933.0
+offset_bottom = 1834.0
 rotation = -0.552326
 scale = Vector2(3, 3)
 texture = ExtResource("2_jbrji")
@@ -90,5 +93,5 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Drag in [color=#45a9ec]Blue zone[/color] then look at  [color=#31de79]Green zone[/color]"
 
-[node name="Label" parent="UI" index="0"]
-text = "Level 1"
+[node name="Label hint" parent="UI" index="1"]
+text = "Finger under, ball upper"

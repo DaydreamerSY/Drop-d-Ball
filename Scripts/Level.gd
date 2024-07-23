@@ -28,7 +28,9 @@ var in_game_menu
 var goal
 
 var level_label
+var hint_label
 var ui
+var hint_marker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,9 +39,17 @@ func _ready():
 	ui = $UI
 	in_game_menu = $"UI/Pause Menu"
 	goal = $Goal
-	level_label = $UI/Label
+	level_label = $"UI/Label level"
+	hint_label = $"UI/Label hint"
+	hint_marker = $Markers
 	level_label.text = get_name()
 	ui.visible = true
+	
+	if GlobalVariant.DESIGN_MODE:
+		hint_marker.visible = true
+	else:
+		hint_marker.visible = false
+	
 	pass # Replace with function body.
 
 

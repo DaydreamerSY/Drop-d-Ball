@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b44kn8e1w01yv"]
+
+[ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_yfyn6"]
+[ext_resource type="PackedScene" uid="uid://cvfua6irsmtgg" path="res://Scenes/Wall v2/wall_block_corner_1x4.tscn" id="2_nh08j"]
+[ext_resource type="PackedScene" uid="uid://ced7avjtjrb50" path="res://Scenes/Wall v2/wall_block_corner_1x4_right.tscn" id="3_j2jm3"]
+[ext_resource type="PackedScene" uid="uid://m71r0lmdnecv" path="res://Scenes/Wall v2/wall_narrow_1x4.tscn" id="4_2oayn"]
+
+[node name="Level 10" instance=ExtResource("1_yfyn6")]
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(416, 688)
+
+[node name="Markers" parent="." index="4"]
+visible = true
+
+[node name="Marker Spawn" parent="Markers" index="0"]
+offset_left = 874.0
+offset_top = 92.0
+offset_right = 954.0
+offset_bottom = 172.0
+
+[node name="Wall corner 2x2" parent="Walls" index="0" instance=ExtResource("2_nh08j")]
+position = Vector2(416, 944)
+
+[node name="Wall block corner 1x4 right" parent="Walls" index="1" instance=ExtResource("3_j2jm3")]
+position = Vector2(944, 1120)
+rotation = 0.261799
+
+[node name="Wall narrow 1x4" parent="Walls" index="2" instance=ExtResource("4_2oayn")]
+position = Vector2(784, 544)
+is_rotate = true
+rotate_speed = 0.5
+
+[node name="Wall narrow 1x5" parent="Walls" index="3" instance=ExtResource("4_2oayn")]
+position = Vector2(432, 384)
+rotation = 1.5708
+
+[node name="Wall narrow 1x6" parent="Walls" index="4" instance=ExtResource("4_2oayn")]
+position = Vector2(688, 976)
+is_rotate = true
+rotate_speed = 0.25

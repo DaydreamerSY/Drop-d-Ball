@@ -1,11 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://eadygm7vvh36"]
 
 [ext_resource type="PackedScene" uid="uid://bfdq63cjmvi6f" path="res://Scenes/Level.tscn" id="1_b8rhr"]
-[ext_resource type="PackedScene" uid="uid://coke84qugsdct" path="res://Scenes/Walls/Wall1x2.tscn" id="2_imi4y"]
-[ext_resource type="PackedScene" uid="uid://clxsmqy4tjd1l" path="res://Scenes/Walls/Wall1x3.tscn" id="3_uakxj"]
+[ext_resource type="PackedScene" uid="uid://m71r0lmdnecv" path="res://Scenes/Wall v2/wall_narrow_1x4.tscn" id="2_wumnw"]
+[ext_resource type="PackedScene" uid="uid://ced7avjtjrb50" path="res://Scenes/Wall v2/wall_block_corner_1x4_right.tscn" id="3_1th7c"]
 
 [node name="Level 3" instance=ExtResource("1_b8rhr")]
 level_id = 3
+
+[node name="Goal" parent="." index="3"]
+position = Vector2(384, 960)
 
 [node name="Marker Spawn" parent="Markers" index="0"]
 offset_left = 541.0
@@ -16,16 +19,15 @@ offset_bottom = 202.0
 [node name="Marker Goals" parent="Markers" index="1"]
 visible = false
 
-[node name="Wall 1x2 1" parent="Walls" index="0" instance=ExtResource("2_imi4y")]
-position = Vector2(363, 296)
-rotation = 1.57079
+[node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_wumnw")]
+position = Vector2(384, 384)
+rotation = 1.5708
 
-[node name="Wall 1x3 1" parent="Walls" index="1" instance=ExtResource("3_uakxj")]
-position = Vector2(619, 590)
-rotation = -2.35619
+[node name="Wall narrow 1x5" parent="Walls" index="1" instance=ExtResource("2_wumnw")]
+position = Vector2(128, 832)
 
-[node name="Wall 1x2 2" parent="Walls" index="2" instance=ExtResource("2_imi4y")]
-position = Vector2(97, 741)
+[node name="Wall block corner 1x4 right" parent="Walls" index="2" instance=ExtResource("3_1th7c")]
+position = Vector2(640, 717.883)
 
-[node name="Label" parent="UI" index="0"]
-text = "Level 3"
+[node name="Label hint" parent="UI" index="1"]
+text = "Gravity (Height) is important!"
