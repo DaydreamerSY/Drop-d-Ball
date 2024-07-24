@@ -15,9 +15,6 @@ offset_top = 80.0
 offset_right = 917.0
 offset_bottom = 165.0
 
-[node name="Marker Goals" parent="Markers" index="1"]
-visible = false
-
 [node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_gikus")]
 position = Vector2(544, 832)
 is_rotate = true
@@ -26,3 +23,7 @@ rotate_speed = 0.5
 
 [node name="Wall block corner 1x4 right" parent="Walls" index="1" instance=ExtResource("3_cvpe2")]
 position = Vector2(896, 640)
+
+[node name="Wall narrow 1x5" parent="Walls" index="2" instance=ExtResource("2_gikus")]
+position = Vector2(224, 368)
+rotation = 1.5708

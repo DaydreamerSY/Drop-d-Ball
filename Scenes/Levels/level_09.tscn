@@ -17,14 +17,15 @@ offset_top = 143.0
 offset_right = 731.0
 offset_bottom = 223.0
 
-[node name="Marker Goals" parent="Markers" index="1"]
-visible = false
-
 [node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_gyg2i")]
 position = Vector2(720, 880)
 is_rotate = true
 rotate_direction = -1
 rotate_speed = 0.5
+
+[node name="Wall narrow 1x5" parent="Walls" index="1" instance=ExtResource("2_gyg2i")]
+position = Vector2(336, 480)
+rotation = 1.5708
 
 [node name="Label hint" parent="UI" index="1"]
 offset_top = -64.0

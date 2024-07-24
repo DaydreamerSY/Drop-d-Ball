@@ -20,70 +20,7 @@ offset_top = 57.0
 offset_right = 211.0
 offset_bottom = 142.0
 
-[node name="Marker Goals" parent="Markers" index="1"]
-visible = false
-
-[node name="TextureRect" type="TextureRect" parent="Markers" index="2"]
-offset_left = 807.0
-offset_top = 1678.0
-offset_right = 882.0
-offset_bottom = 1753.0
-texture = ExtResource("2_n48eg")
-expand_mode = 1
-
-[node name="Line2D2" type="Line2D" parent="Markers" index="3"]
-position = Vector2(-118, -1051)
-points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D2" type="Line2D" parent="Markers/Line2D2" index="0"]
-position = Vector2(1, 0)
-points = PackedVector2Array(550, 1153, 528, 1153)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D3" type="Line2D" parent="Markers/Line2D2" index="1"]
-position = Vector2(-39, 0)
-points = PackedVector2Array(550, 1153, 528, 1153)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D3" type="Line2D" parent="Markers" index="4"]
-position = Vector2(242, 567)
-points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D2" type="Line2D" parent="Markers/Line2D3" index="0"]
-position = Vector2(1, 0)
-points = PackedVector2Array(550, 1153, 528, 1153)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Line2D3" type="Line2D" parent="Markers/Line2D3" index="1"]
-position = Vector2(-39, 0)
-points = PackedVector2Array(550, 1153, 528, 1153)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="Tuto Hand" type="TextureRect" parent="Markers" index="5"]
-offset_left = 813.0
-offset_top = 1714.0
-offset_right = 933.0
-offset_bottom = 1834.0
-rotation = -0.552326
-scale = Vector2(3, 3)
-texture = ExtResource("2_jbrji")
-script = ExtResource("4_6csei")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Markers" index="6"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Markers" index="2"]
 visible = false
 offset_left = 80.0
 offset_top = 894.0
@@ -92,6 +29,68 @@ offset_bottom = 1017.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Drag in [color=#45a9ec]Blue zone[/color] then look at  [color=#31de79]Green zone[/color]"
+
+[node name="Tutorial" type="Node2D" parent="." index="5"]
+
+[node name="Line2D2" type="Line2D" parent="Tutorial" index="0"]
+position = Vector2(-118, -1051)
+points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Tutorial/Line2D2" index="0"]
+position = Vector2(1, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Tutorial/Line2D2" index="1"]
+position = Vector2(-39, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Tutorial" index="1"]
+position = Vector2(242, 567)
+points = PackedVector2Array(465, 1153, 372, 1153, 388, 1137, 372, 1153, 388, 1170.15)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Tutorial/Line2D3" index="0"]
+position = Vector2(1, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Tutorial/Line2D3" index="1"]
+position = Vector2(-39, 0)
+points = PackedVector2Array(550, 1153, 528, 1153)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial" index="2"]
+offset_left = 807.0
+offset_top = 1678.0
+offset_right = 882.0
+offset_bottom = 1753.0
+texture = ExtResource("2_n48eg")
+expand_mode = 1
+
+[node name="Tuto Hand" type="TextureRect" parent="Tutorial" index="3"]
+offset_left = 813.0
+offset_top = 1714.0
+offset_right = 933.0
+offset_bottom = 1834.0
+rotation = -0.552326
+scale = Vector2(3, 3)
+texture = ExtResource("2_jbrji")
+script = ExtResource("4_6csei")
 
 [node name="Label hint" parent="UI" index="1"]
 text = "Finger under, ball upper"

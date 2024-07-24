@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqjl3uoweaqwx" path="res://Scenes/Background.tscn" id="3_kakct"]
 [ext_resource type="Shader" path="res://Shaders/line_shader.gdshader" id="4_kt8rx"]
 [ext_resource type="Texture2D" uid="uid://bh70d10lr5w07" path="res://Assets/Particles/Line_wool.png" id="4_mewtj"]
-[ext_resource type="PackedScene" uid="uid://dew8nv7dd1fx" path="res://Scenes/Goal.tscn" id="6_kj8he"]
+[ext_resource type="PackedScene" path="res://Scenes/Goal.tscn" id="6_kj8he"]
 [ext_resource type="Texture2D" uid="uid://dub8kg7hvj07v" path="res://Assets/Cursors/check_round_round_circle.png" id="7_7ay8l"]
 [ext_resource type="Texture2D" uid="uid://c5dggiolhmtun" path="res://Assets/Menu/Item3.png" id="8_husda"]
 [ext_resource type="Texture2D" uid="uid://s0f35blav7cs" path="res://Assets/Cursors/target_a.png" id="8_liygq"]

@@ -17,9 +17,6 @@ offset_top = 128.0
 offset_right = 576.0
 offset_bottom = 208.0
 
-[node name="Marker Goals" parent="Markers" index="1"]
-visible = false
-
 [node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_lia37")]
 position = Vector2(416, 560)
 is_rotate = true

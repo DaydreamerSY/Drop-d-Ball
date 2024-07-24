@@ -26,9 +26,8 @@ LevelManager="*res://Scenes/LevelManager.tscn"
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/size/initial_position_type=2
-window/size/window_width_override=360
-window/size/window_height_override=640
-window/stretch/mode="viewport"
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
