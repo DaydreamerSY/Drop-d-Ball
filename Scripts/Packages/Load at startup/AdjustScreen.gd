@@ -10,7 +10,8 @@ func _ready():
 	if OS.get_name() == "Windows":
 		width = 540
 		height = 960
-		DisplayServer.window_set_position(DisplayServer.window_get_position() - Vector2i(150, 150))
+		#DisplayServer.window_set_position(DisplayServer.window_get_position() + Vector2i(50, 50))
+		DisplayServer.window_set_position(Vector2(1370, 60))
 	elif OS.get_name() == "macOS":
 		width = 1080
 		height = 1920

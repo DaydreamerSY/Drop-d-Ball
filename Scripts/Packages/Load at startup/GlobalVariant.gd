@@ -9,10 +9,9 @@ var card_contents = {
 }
 
 var CONTENTS_DATA_FILE_NAME = "user://game-contents.json"
-var BALL_OFFSET = 0
+var BALL_OFFSET = 1610
 
 var DESIGN_MODE = false
-
 
 
 

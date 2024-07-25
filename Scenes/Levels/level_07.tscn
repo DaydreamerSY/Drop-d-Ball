@@ -27,3 +27,7 @@ position = Vector2(896, 640)
 [node name="Wall narrow 1x5" parent="Walls" index="2" instance=ExtResource("2_gikus")]
 position = Vector2(224, 368)
 rotation = 1.5708
+
+[node name="Wall narrow 1x6" parent="Walls" index="3" instance=ExtResource("2_gikus")]
+position = Vector2(512, 368)
+rotation = 1.5708

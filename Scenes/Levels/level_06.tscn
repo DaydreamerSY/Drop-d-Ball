@@ -18,5 +18,7 @@ offset_right = 565.0
 offset_bottom = 245.0
 
 [node name="Wall narrow 1x4" parent="Walls" index="0" instance=ExtResource("2_5qyct")]
-position = Vector2(448, 544)
+position = Vector2(512, 1104)
+rotation = 1.5708
 is_rotate = true
+rotate_speed = 3.0

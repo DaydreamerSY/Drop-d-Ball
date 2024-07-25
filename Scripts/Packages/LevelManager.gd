@@ -1,8 +1,8 @@
 extends Node2D
 
 @export_category("Level design")
-@export var is_designing_level = false
 @export var go_to_lv = 1
+@export var is_designing_level = false
 @export var go = false
 
 var in_game_menu
@@ -56,7 +56,6 @@ func _ready():
 	# 1000 in (720x1280) equal ? in other size -> 1000/1280
 	
 	#GlobalVariant.BALL_OFFSET = DisplayServer.screen_get_size().y * 1000/1280
-	GlobalVariant.BALL_OFFSET = 1610
 	print(GlobalVariant.BALL_OFFSET)
 	pass # Replace with function body.
 

@@ -8,6 +8,7 @@ var rotate_direction = 1 # 1 = right, -1 = left
 var ROTATE_THRESHOLD = 10
 
 var votex
+var is_have_ball_in_hole = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,10 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body:Node2D):
 	if body.is_in_group("ball"):
+		if is_have_ball_in_hole == false:
+			is_have_ball_in_hole = true
+		else:
+			return
 		#print("Ball fall into the hole: " , body)
 		var duplicate_skin = body.get_node("Skin").duplicate(true)
 		votex.call_deferred("add_child", duplicate_skin)
@@ -59,9 +64,10 @@ func _on_area_2d_body_entered(body:Node2D):
 		)
 		_tween.tween_callback(_remove_skin).set_delay(delay_time)
 		
-	if !LevelManager.is_at_main_menu:
-		LevelManager.nextLevel()
-		LevelManager.camera_zoom_in_pos = self.position
+		if !LevelManager.is_at_main_menu:
+			LevelManager.nextLevel()
+			LevelManager.camera_zoom_in_pos = self.position
+			
 	pass # Replace with function body.
 
 func _remove_skin():
@@ -69,6 +75,5 @@ func _remove_skin():
 		i.queue_free()
 	start_rotate = false
 	votex.rotation = 0
+	is_have_ball_in_hole = false
 	
-	
-

@@ -7,6 +7,7 @@ var is_reset_to_new = false
 
 var particle : CPUParticles2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	particle = $CPUParticles2D
@@ -15,8 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-
-		pass
+	pass
 
 
 
@@ -56,6 +56,11 @@ func _on_body_entered(body):
 
 
 func _on_area_2d_area_entered(area):
-	
 	particle.emitting = true
+	
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_exited(area):
+	#is_emiting_particle = false
 	pass # Replace with function body.

@@ -36,12 +36,13 @@ var hint_marker
 func _ready():
 	ball_tracker = $BallTracker
 	ball_list = $Balls
-	ui = $UI
-	in_game_menu = $"UI/Pause Menu"
 	goal = $Goal
-	level_label = $"UI/Label level"
-	hint_label = $"UI/Label hint"
 	hint_marker = $Markers
+	
+	ui = $CanvasLayer/UI
+	in_game_menu = ui.get_node("Pause Menu")
+	level_label = ui.get_node("Label level")
+	hint_label = ui.get_node("Label hint")
 	level_label.text = get_name()
 	ui.visible = true
 	
@@ -76,7 +77,6 @@ func _process(_delta):
 			current_ball.global_position.y = _mouse_pos.y - GlobalVariant.BALL_OFFSET
 
 	pass
-	
 
 
 func _input(event):

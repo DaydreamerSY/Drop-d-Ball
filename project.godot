@@ -26,9 +26,11 @@ LevelManager="*res://Scenes/LevelManager.tscn"
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/size/initial_position_type=2
-window/size/resizable=false
+window/size/initial_screen=2
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
 window/handheld/orientation=1
 
 [file_customization]
